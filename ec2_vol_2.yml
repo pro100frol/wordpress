@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    region: eu-west-1
+  tasks:
+    - name: EC2 provisioning with provisioned IOPS EBS volume
+      ec2:
+        region: "{{ region }}"
+        key_name: inilap
+        instance_type: t2.micro
+        image: ami-bb9a6bc2
+        group: sg_webserver_frol
+        volumes:
+          - device_name: /dev/sda1
+            device_type: io1
+            iops: 1000
+            volume_size: 500
+            delete_on_termination: true

@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    region: eu-west-1
+  tasks:
+    - name: EC2 provisioning with provisioned GP2 EBS volume
+      ec2:
+        region: "{{ region }}"
+        key_name: inilap
+        instance_type: t2.micro
+        image: ami-bb9a6bc2
+        group: sg_webserver_frol
+        instance_profile_name: S3ReadAccess
+        volumes:
+          - device_name: /dev/sda1
+            device_type: gp2
+            volume_size: 100
+            delete_on_termination: true
