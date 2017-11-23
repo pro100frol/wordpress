@@ -1,9 +1,6 @@
 ---
 - name: install mysql server
-  yum: name={{ item }} state=present
-  with_items:
-    - mysql-devel
-    - mysql-server
+  yum: name=mariadb-server state=present
 
 - name: install mysql-python
   pip: name=mysql-python state=present
@@ -13,4 +10,4 @@
   notify: restart mysql
 
 - name: start mysql service
-  service: name=mysqld state=started enabled=true
+  service: name=mariadb state=started enabled=true

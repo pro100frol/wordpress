@@ -5,7 +5,7 @@
   vars:
     region: eu-west-1
     keyname: inilap_wp
-    allowed_ip: 172.31.23.38/32
+    allowed_ip: 52.48.149.189/32
     instance_type: t2.micro
     image: ami-bb9a6bc2
   tasks:
@@ -53,7 +53,7 @@
       image: "{{ image }}"
       wait: yes
       group: sg_wordpress_frol
-      id: wordpress_launch_1_2
+      id: wordpress_launch_1_3
       instance_tags:
         Name: wordpress-1
         class: wordpress
