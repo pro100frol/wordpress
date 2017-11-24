@@ -5,6 +5,7 @@
   tasks:
     - name: create record
       route53:
+        private_zone: True
         state: present
         zone: inivata.com.
         record: wp.inivata.com
