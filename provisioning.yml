@@ -53,7 +53,7 @@
       image: "{{ image }}"
       wait: yes
       group: sg_wordpress_frol
-      id: wordpress_launch_1_3
+      id: wordpress_launch_2
       instance_tags:
         Name: wordpress-1
         class: wordpress

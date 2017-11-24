@@ -4,6 +4,9 @@
 - name: install mysql devel
   yum: name=mariadb-devel state=present
 
+- name: install python-devel
+  yum: name=python-devel state=present
+
 - name: install mysql-python
   pip: name=mysql-python state=present
 
