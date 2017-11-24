@@ -1,3 +1,5 @@
 ---
 - name: install the 'Dev-tools' package group
   yum: name="@Development tools" state=present update_cache=yes
+- name: install pip
+  yum: name=python-pip state=present
