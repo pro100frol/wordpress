@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: create record
+      route53:
+        command: create
+        zone: inivata.com.
+        record: wp.inivata.com
+        type: A
+        # Public IP address of wordpress server from chapter 4
+        value: 172.31.25.126
